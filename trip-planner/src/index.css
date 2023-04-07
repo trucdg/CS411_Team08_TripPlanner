@@ -3,3 +3,7 @@
 body {
   font-family: "Poppins", Helvetica, Arial, sans-serif;
 }
+
+.main-content {
+  margin: 2rem auto;
+}
