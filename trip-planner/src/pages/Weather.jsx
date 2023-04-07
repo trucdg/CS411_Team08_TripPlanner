@@ -2,21 +2,28 @@ import { useState } from "react";
 import classes from "./Weather.module.css";
 import CurrWeatherThumbnails from "../components/WeatherPage/CurrWeatherThumbnails";
 
+const API_KEY = import.meta.env.VITE_APP_API_KEY;
+
 const Weather = () => {
-  let weatherInfo = {
-    cityName: "NYC",
-    temp: 298,
-    humidity: 30,
-    weatherDescription: "Light Rain",
-  };
+  //   let weatherInfo = {
+  //     cityName: "NYC",
+  //     temp: 298,
+  //     humidity: 30,
+  //     weatherDescription: "Light Rain",
+  //   };
 
   // initially, the default location is New York City
   const [enteredLat, setLat] = useState("");
   const [enteredLong, setLong] = useState("");
-  const [coordinates, setCoordinates] = useState({});
+  const [weatherInfo, setWeatherInfo] = useState({
+    cityName: "NYC",
+    temp: 298,
+    humidity: 30,
+    weatherDescription: "Light Rain",
+  });
 
   // we use the Navigator interface from the browser API to get geolocation info
-  let geolocationAPI = navigator.geolocation;
+  //   let geolocationAPI = navigator.geolocation;
 
   //   const getUserCoordinates = () => {
   //     if (!geolocationAPI) {
@@ -49,11 +56,37 @@ const Weather = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    let submittedCoordinates = {
+    let enteredCoordinates = {
       lat: enteredLat,
       long: enteredLong,
     };
-    console.log(submittedCoordinates);
+    console.log(enteredCoordinates);
+    fetchWeatherInfo();
+  };
+
+  const fetchWeatherInfo = async () => {
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${enteredLat}&lon=${enteredLong}&units=metric&appid=${API_KEY}`
+      );
+      const data = await response.json();
+      console.log(data);
+      console.log(data.name);
+
+      setWeatherInfo({
+        cityName: data.name,
+        temp: data.main.temp,
+        humidity: data.main.humidity,
+        weatherDescription: data.weather[0].description,
+      });
+
+      console.log(weatherInfo);
+    } catch (e) {
+      console.log(
+        "Oh no, there is an error when fetching for data from the weather API"
+      );
+      console.log("The weather is", e);
+    }
   };
 
   return (
