@@ -6,6 +6,11 @@ const ErrorPage = () => {
     <div className={classes["main-body"]}>
       <div className={classes["bg-purple"]}>
         <div className={classes.stars}>
+          <h1>
+            <Link to="/" className={classes["brand-heading"]}>
+              TripPlanner
+            </Link>
+          </h1>
           <div className={classes["central-body"]}>
             <img
               className={classes["image-404"]}

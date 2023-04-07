@@ -153,7 +153,7 @@ html,
   padding: 20px 15px;
   border: 1px solid #ffcb39;
   border-radius: 100px;
-  font-weight: 400;
+  font-weight: 500;
   display: block;
   color: white;
   text-align: center;
@@ -170,11 +170,27 @@ html,
 
 .btn-go-home:hover {
   background-color: #ffcb39;
-  color: #fff;
+  color: #723191;
   transform: scale(1.05);
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
 }
 
+.brand-heading {
+  margin: 25px auto;
+  font-weight: 400;
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 3px;
+  transition: all 0.3s ease-in;
+}
+
+.brand-heading:hover {
+  color: #ffcb39;
+  text-decoration: underline;
+}
 .central-body {
   /* width: 100%; */
   padding: 25% 5% 15% 5%;
