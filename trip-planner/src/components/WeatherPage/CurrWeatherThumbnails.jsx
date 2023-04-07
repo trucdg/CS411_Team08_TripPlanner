@@ -1,6 +1,6 @@
 import "./CurrWeatherThumbnails.css";
 
-const CurrWeatherThumbNails = ({
+const CurrWeatherThumbnails = ({
   cityName,
   temp,
   humidity,
@@ -28,4 +28,4 @@ const CurrWeatherThumbNails = ({
   );
 };
 
-export default CurrWeatherThumbNails;
+export default CurrWeatherThumbnails;
