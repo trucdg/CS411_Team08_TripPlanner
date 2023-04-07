@@ -5,9 +5,9 @@ function MainNavigation() {
     <>
       <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <Link to="/" className="navbar-brand">
             TripPlanner
-          </a>
+          </Link>
           <button
             class="navbar-toggler"
             type="button"
