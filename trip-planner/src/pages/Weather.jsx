@@ -1,5 +1,9 @@
 const Weather = () => {
-  return <h1>Weather Page</h1>;
+  return (
+    <div>
+      <h1>Weather Forecast</h1>
+    </div>
+  );
 };
 
 export default Weather;
