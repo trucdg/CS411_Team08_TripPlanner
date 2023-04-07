@@ -19,10 +19,12 @@ const CurrWeatherThumbNails = ({
           <h4>{cityName}</h4>
         </li>
         <li className="card">
-          <h4>{temp}</h4>
+          <h4>
+            <i class="fa-solid fa-temperature-low"> {temp} &#8451; </i>
+          </h4>
         </li>
         <li className="card">
-          <h4>{humidity}</h4>
+          <h4>{humidity}% Humid</h4>
         </li>
         <li className="card">
           <h4>{weatherDescription}</h4>
