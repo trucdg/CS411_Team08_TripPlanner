@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MainNavigation() {
   return (
     <>
@@ -20,24 +22,24 @@ function MainNavigation() {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="/">
+                <Link className="nav-link" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link className="nav-link" to="/about">
                   About
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link className="nav-link" to="/weather">
                   Weather
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link className="nav-link" to="/flight">
                   Flight
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
