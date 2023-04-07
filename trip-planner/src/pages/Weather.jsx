@@ -5,21 +5,14 @@ import CurrWeatherThumbnails from "../components/WeatherPage/CurrWeatherThumbnai
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 const Weather = () => {
-  //   let weatherInfo = {
-  //     cityName: "NYC",
-  //     temp: 298,
-  //     humidity: 30,
-  //     weatherDescription: "Light Rain",
-  //   };
-
   // initially, the default location is New York City
   const [enteredLat, setLat] = useState("");
   const [enteredLong, setLong] = useState("");
   const [weatherInfo, setWeatherInfo] = useState({
-    cityName: "NYC",
-    temp: 298,
-    humidity: 30,
-    weatherDescription: "Light Rain",
+    cityName: "City Name",
+    temp: "",
+    humidity: "",
+    weatherDescription: "Weather Description",
   });
 
   // we use the Navigator interface from the browser API to get geolocation info
