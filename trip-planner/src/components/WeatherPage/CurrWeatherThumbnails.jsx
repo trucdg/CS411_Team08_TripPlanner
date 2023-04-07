@@ -8,12 +8,6 @@ const CurrWeatherThumbNails = ({
 }) => {
   return (
     <div className="weather-thumbnail-cont">
-      <p>
-        TripPlanner uses data from the
-        <a href="https://openweathermap.org/" target="_blank">
-          OpenWeather API
-        </a>
-      </p>
       <ul className="d-flex flex-column flex-lg-row justify-content-center align-items-center">
         <li className="card">
           <h4>{cityName}</h4>
