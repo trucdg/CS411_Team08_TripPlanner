@@ -109,12 +109,12 @@ const Weather = () => {
               </div>
               <div className="col">
                 <label>
-                  Longtitude
+                  Longitude
                   <input
                     type="text"
                     value={enteredLong}
                     className="form-control"
-                    placeholder="Longtitude"
+                    placeholder="Longitude"
                     onChange={longChangeHandler}
                   />
                 </label>
