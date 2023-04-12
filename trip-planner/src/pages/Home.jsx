@@ -6,11 +6,10 @@ const Home = () => {
     <div className={classes["home-content-box"]}>
       <div className={classes["home-content"]}>
         <h1>TripPlanner</h1>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquam
-          inventore sequi consequatur commodi sint, quasi qui corporis dolorum
-          tenetur earum iste aliquid, libero, amet eius dignissimos maxime
-          deleniti blanditiis.
+        <p class="description">Feel at ease on your trip with our planner!</p>
+        <p>
+          Create, organize, and plan your itinerary with a free travel planning
+          app.
         </p>
         <Link
           to="/"
