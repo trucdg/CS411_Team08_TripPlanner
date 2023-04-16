@@ -1,9 +1,10 @@
 import React from "react";
-import classes from "./Posts.module.css";
+import { Link } from "react-router-dom";
+import classes from "./TravelFeed.module.css";
 
-const Posts = () => {
+const TravelFeed = () => {
   return (
-    <div className={classes["posts-main"]}>
+    <div className={classes["feed-main"]}>
       <div className={classes.header}>
         <h1>TravelFeed</h1>
         <p>
@@ -17,12 +18,14 @@ const Posts = () => {
           Explore
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
-        <button className={classes.headerBtn}>
-          New Post<i className="fa-solid fa-square-up-right"></i>
-        </button>
+        <Link to="newpost">
+          <button className={classes.headerBtn}>
+            New Post<i className="fa-solid fa-square-up-right"></i>
+          </button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Posts;
+export default TravelFeed;

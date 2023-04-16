@@ -42,7 +42,7 @@ function MainNavigation() {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/posts">
+                <Link className="nav-link" to="/feed">
                   TravelFeed
                 </Link>
               </li>
