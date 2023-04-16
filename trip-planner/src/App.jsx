@@ -16,16 +16,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/weather", element: <Weather /> },
-      {
-        path: "/feed",
-        element: <TravelFeed />,
-        children: [
-          {
-            path: "newpost",
-            element: <CreatePost />,
-          },
-        ],
-      },
+      { path: "/feed/*", element: <TravelFeed /> },
     ],
   },
 ]);
