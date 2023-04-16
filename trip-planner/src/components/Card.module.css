@@ -7,10 +7,40 @@
   max-width: 70vw;
   background: #4443438a;
   transition: all ease-in 0.15s;
+  color: rgba(255, 255, 255, 0.911);
 }
 
 .post-card:hover {
   box-shadow: 0 1px 8px rgba(231, 226, 226, 0.596);
   cursor: pointer;
   transform: translateY(-10px);
+}
+
+.title {
+  padding-left: 30px;
+  text-align: left;
+}
+
+.author {
+  margin-bottom: 20px;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.description {
+  text-align: justify;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.edit {
+  width: 30px;
+  font-size: 30px;
+  float: right;
+  color: white;
+}
+
+.edit:hover {
+  color: #ffcb39;
 }
