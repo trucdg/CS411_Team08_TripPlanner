@@ -43,7 +43,7 @@ function MainNavigation() {
               </li>
               <li class="nav-item">
                 <Link className="nav-link" to="/posts">
-                  New Posts
+                  TravelFeed
                 </Link>
               </li>
             </ul>
