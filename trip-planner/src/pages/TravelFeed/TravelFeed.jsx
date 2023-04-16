@@ -1,6 +1,7 @@
 import React from "react";
 import { useRoutes, Link } from "react-router-dom";
 import classes from "./TravelFeed.module.css";
+import ReadPosts from "./ReadPosts";
 import CreatePost from "./CreatePost";
 
 const TravelFeed = () => {
@@ -37,8 +38,8 @@ const TravelFeed = () => {
   // set up routes
   let elements = useRoutes([
     {
-      // path: "/",
-      // element:<ReadPosts data={posts}/>
+      index: true,
+      element: <ReadPosts data={posts} />,
     },
     {
       // path:"/edit/:id",
