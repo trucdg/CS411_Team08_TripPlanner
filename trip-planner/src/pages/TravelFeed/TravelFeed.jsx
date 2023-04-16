@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import classes from "./TravelFeed.module.css";
 
 const TravelFeed = () => {
@@ -14,16 +14,20 @@ const TravelFeed = () => {
         <p>Explore and share travelling experiences here!</p>
       </div>
       <div>
-        <button className={classes.headerBtn}>
-          Explore
-          <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
+        <Link to="./">
+          <button className={classes.headerBtn}>
+            Explore
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </Link>
+
         <Link to="newpost">
           <button className={classes.headerBtn}>
             New Post<i className="fa-solid fa-square-up-right"></i>
           </button>
         </Link>
       </div>
+      <Outlet />
     </div>
   );
 };

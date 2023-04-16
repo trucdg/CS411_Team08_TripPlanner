@@ -1,12 +1,12 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home/Home";
 import Weather from "./pages/Weather/Weather";
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import Posts from "./pages/TravelFeed/TravelFeed";
-import "./App.css";
-import CreatePost from "./pages/TravelFeed/CreatePost";
 import TravelFeed from "./pages/TravelFeed/TravelFeed";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import CreatePost from "./pages/TravelFeed/CreatePost";
+
+import "./App.css";
 
 const router = createBrowserRouter([
   {
