@@ -1,10 +1,11 @@
 import React from "react";
+import classes from "./Posts.module.css";
 
 const Posts = () => {
   return (
-    <>
-      <h1>This is the POST PAGE</h1>
-    </>
+    <div className={classes["posts-main"]}>
+      <h1>This is the post page</h1>
+    </div>
   );
 };
 
