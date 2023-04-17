@@ -1,0 +1,72 @@
+.post-card {
+  border: 1px solid rgba(153, 153, 153, 0.497);
+  border-radius: 1.5em;
+  padding: 1.5em 2em;
+  margin: 1em auto 2em;
+  text-align: center;
+  max-width: 70vw;
+  min-width: 50vw;
+  background: #4443438a;
+  transition: all ease-in 0.15s;
+  color: rgba(255, 255, 255, 0.911);
+}
+
+.post-card:hover {
+  box-shadow: 0 1px 8px rgba(231, 226, 226, 0.596);
+  transform: translateY(-10px);
+}
+
+.post-card:last-child {
+  margin-bottom: 10em;
+}
+
+.title {
+  padding-left: 30px;
+  text-align: left;
+}
+
+.author {
+  margin-bottom: 20px;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.description {
+  text-align: justify;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.edit {
+  width: 30px;
+  font-size: 30px;
+  float: right;
+  color: white;
+}
+
+.edit:hover {
+  color: #ffcb39;
+}
+
+.likeBtn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  transition: all ease-in 0.25s;
+}
+
+.likeBtn:hover {
+  background-color: #ffcb39;
+  color: black;
+}
+
+.likeBtn i {
+  padding-right: 15px;
+}

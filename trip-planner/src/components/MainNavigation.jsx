@@ -41,6 +41,11 @@ function MainNavigation() {
                   Flight
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link className="nav-link" to="/feed">
+                  TravelFeed
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

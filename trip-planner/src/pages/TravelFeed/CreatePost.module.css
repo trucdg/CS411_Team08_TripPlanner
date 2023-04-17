@@ -1,0 +1,30 @@
+.createPost-main {
+  color: rgba(240, 248, 255, 0.808);
+  min-width: 60vw;
+}
+
+.createPost-main label {
+  font-size: 20px;
+  margin: 0.7em auto;
+}
+
+.submitBtn {
+  width: 10em;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ffcb39;
+  color: black;
+  cursor: pointer;
+  transition: all ease-in 0.25s;
+  margin: 2em auto 0;
+}
+
+.submitBtn:hover {
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid yellow;
+}
