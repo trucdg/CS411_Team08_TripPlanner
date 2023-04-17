@@ -1,15 +1,30 @@
 import React from "react";
+import { useRef } from "react";
 import classes from "./CreatePost.module.css";
 
 const CreatePost = () => {
+  const titleRef = useRef();
+  const authorRef = useRef();
+  const descriptionRef = useRef();
+
+  const createPost = (event) => {
+    event.preventDefault();
+    const post = {
+      title: titleRef.current.value,
+      author: authorRef.current.value,
+      description: descriptionRef.current.value,
+    };
+    console.log(post);
+  };
   return (
     <div className={classes["createPost-main"]}>
       <div className={"container " + classes.inner}>
-        <form>
+        <form onSubmit={createPost}>
           <label for="title" className="form-label">
             Title
           </label>
           <input
+            ref={titleRef}
             type="text"
             name="title"
             id="title"
@@ -20,6 +35,7 @@ const CreatePost = () => {
             Author
           </label>
           <input
+            ref={authorRef}
             type="text"
             name="author"
             id="author"
@@ -30,6 +46,7 @@ const CreatePost = () => {
             Description
           </label>
           <textarea
+            ref={descriptionRef}
             name="description"
             id="description"
             className="form-control"
