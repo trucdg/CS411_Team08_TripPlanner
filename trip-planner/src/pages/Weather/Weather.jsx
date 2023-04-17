@@ -1,6 +1,6 @@
 import { useState } from "react";
 import classes from "./Weather.module.css";
-import CurrWeatherThumbnails from "../../components/WeatherPage/CurrWeatherThumbnails";
+import CurrWeatherThumbnails from "./CurrWeatherThumbnails";
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
