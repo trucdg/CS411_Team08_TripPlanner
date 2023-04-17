@@ -1,13 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Card from "../../components/Card";
+import { supabase } from "../../client";
 
 const ReadPosts = (props) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     setPosts(props.data);
-    console.log("Readpost is rendered");
   }, [props]);
 
   return (
