@@ -1,10 +1,14 @@
-import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  BrowserRouter,
+} from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home/Home";
 import Weather from "./pages/Weather/Weather";
 import TravelFeed from "./pages/TravelFeed/TravelFeed";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import CreatePost from "./pages/TravelFeed/CreatePost";
 
 import "./App.css";
 
