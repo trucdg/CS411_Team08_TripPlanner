@@ -3,6 +3,7 @@ import { useRoutes, Link } from "react-router-dom";
 import classes from "./TravelFeed.module.css";
 import ReadPosts from "./ReadPosts";
 import CreatePost from "./CreatePost";
+import EditPost from "./EditPost";
 
 const TravelFeed = () => {
   const descr =
@@ -42,8 +43,8 @@ const TravelFeed = () => {
       element: <ReadPosts data={posts} />,
     },
     {
-      // path:"/edit/:id",
-      // element: <EditPost data={posts} />
+      path: "edit/:id",
+      element: <EditPost data={posts} />,
     },
     {
       path: "new",
