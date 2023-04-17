@@ -17,7 +17,7 @@ const ReadPosts = (props) => {
           return (
             <>
               <Card
-                key={post.id}
+                key={index}
                 id={post.id}
                 title={post.title}
                 author={post.author}
