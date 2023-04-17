@@ -7,6 +7,8 @@
   height: 100px;
   color: aliceblue;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .card h4 {
