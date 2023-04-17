@@ -1,13 +1,14 @@
 import React from "react";
 import { useRef } from "react";
 import classes from "./CreatePost.module.css";
+import { supabase } from "../../client";
 
 const CreatePost = () => {
   const titleRef = useRef();
   const authorRef = useRef();
   const descriptionRef = useRef();
 
-  const createPost = (event) => {
+  const createPost = async (event) => {
     event.preventDefault();
     const post = {
       title: titleRef.current.value,
@@ -15,6 +16,18 @@ const CreatePost = () => {
       description: descriptionRef.current.value,
     };
     console.log(post);
+
+    await supabase
+      .from("Posts") //table name on the database
+      .insert({
+        title: post.title,
+        author: post.author,
+        description: post.description,
+      })
+      .select(); //select return the database entry once it has been inserted to the database
+
+    // redirect to the feed page
+    window.location = "/feed";
   };
   return (
     <div className={classes["createPost-main"]}>
