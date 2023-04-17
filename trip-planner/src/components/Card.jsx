@@ -10,7 +10,7 @@ const Card = (props) => {
   };
   return (
     <div className={classes["post-card"]}>
-      <Link to="" className={classes.edit}>
+      <Link to={"edit/" + props.id} className={classes.edit}>
         <i className="fa-solid fa-ellipsis-vertical"></i>
       </Link>
       <h2 className={classes.title}>{props.title}</h2>
