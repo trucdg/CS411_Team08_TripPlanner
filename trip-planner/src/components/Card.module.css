@@ -5,6 +5,7 @@
   margin: 1em auto 2em;
   text-align: center;
   max-width: 70vw;
+  min-width: 50vw;
   background: #4443438a;
   transition: all ease-in 0.15s;
   color: rgba(255, 255, 255, 0.911);
