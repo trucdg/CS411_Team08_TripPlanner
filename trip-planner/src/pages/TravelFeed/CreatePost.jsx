@@ -36,6 +36,9 @@ const CreatePost = () => {
             placeholder="Tell us more about your exciting trip!"
             rows="5"
           ></textarea>
+          <button type="submit" className={classes.submitBtn}>
+            Submit
+          </button>
         </form>
       </div>
     </div>
