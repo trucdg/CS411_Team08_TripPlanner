@@ -15,6 +15,10 @@
   transform: translateY(-10px);
 }
 
+.post-card:last-child {
+  margin-bottom: 10em;
+}
+
 .title {
   padding-left: 30px;
   text-align: left;
