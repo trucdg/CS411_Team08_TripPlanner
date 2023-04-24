@@ -48,7 +48,7 @@ const EditPost = ({ data }) => {
       console.log(error);
     }
 
-    window.location = "/feed";
+    window.location.href = "/feed";
   };
 
   const deletePost = async (event) => {
@@ -59,7 +59,7 @@ const EditPost = ({ data }) => {
       console.log(error);
     }
 
-    window.location = "/feed";
+    window.location.href = "/feed";
   };
 
   return (
