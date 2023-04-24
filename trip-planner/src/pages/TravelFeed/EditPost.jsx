@@ -48,7 +48,10 @@ const EditPost = ({ data }) => {
       console.log(error);
     }
 
-    window.location.href = "/feed";
+    // Since vercel is returning 404 error with dynamic routing,
+    // I'll test and use a hard-coded url for now
+    window.location.href =
+      "https://cs-411-team08-trip-planner-vercel.vercel.app/feed";
   };
 
   const deletePost = async (event) => {
@@ -59,7 +62,8 @@ const EditPost = ({ data }) => {
       console.log(error);
     }
 
-    window.location.href = "/feed";
+    window.location.href =
+      "https://cs-411-team08-trip-planner-vercel.vercel.app/feed";
   };
 
   return (
