@@ -1,5 +1,7 @@
 # CS411_Team08_TripPlanner
 
+## 🎁 Link to our project [TripPlanner](https://cs-411-team08-trip-planner.vercel.app/)
+
 ## About Our Team
 :heavy_check_mark:***Members***
 * :point_right: Truc Duong :email:: trucdg@bu.edu
