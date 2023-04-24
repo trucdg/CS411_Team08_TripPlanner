@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import classes from "./EditPost.module.css";
 import { supabase } from "../../client";
 
@@ -33,6 +33,8 @@ const EditPost = ({ data }) => {
     });
   };
 
+  const navigate = useNavigate();
+
   const updatePost = async (event) => {
     event.preventDefault();
     const { error } = await supabase
@@ -48,10 +50,7 @@ const EditPost = ({ data }) => {
       console.log(error);
     }
 
-    // Since vercel is returning 404 error with dynamic routing,
-    // I'll test and use a hard-coded url for now
-    window.location.href =
-      "https://cs-411-team08-trip-planner-vercel.vercel.app/feed";
+    window.location.href = "/feed";
   };
 
   const deletePost = async (event) => {
@@ -62,8 +61,7 @@ const EditPost = ({ data }) => {
       console.log(error);
     }
 
-    window.location.href =
-      "https://cs-411-team08-trip-planner-vercel.vercel.app/feed";
+    window.location.href = "/feed";
   };
 
   return (
