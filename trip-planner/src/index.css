@@ -13,8 +13,9 @@ a {
 }
 
 h1 {
-  margin: 1em;
+  padding: 1em;
 }
+
 footer {
   color: rgb(165, 171, 177);
 }

@@ -57,7 +57,7 @@ const SignUpForm = () => {
     //     Already have an account? <Link to="/login">Login</Link>
     //   </p>
     // </>
-    <div className="vh-100">
+    <div className={classes["signUp-main"] + " vh-100"}>
       <div className={classes["h-custom"] + " container-fluid"}>
         <h1>Signing you up for TripPlanner!</h1>
         <div className="row d-flex justify-content-center align-items-center h-80">
