@@ -22,6 +22,8 @@
 
 .home-content ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .home-content li {
