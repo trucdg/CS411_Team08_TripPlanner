@@ -11,12 +11,24 @@ const Home = () => {
           Create, organize, and plan your itinerary with a free travel planning
           app.
         </p>
-        <Link
-          to="/"
-          className="btn btn-lg btn-secondary font-weight-bold text-white"
-        >
-          Learn More
-        </Link>
+        <ul>
+          <li>
+            <Link to="/" className={classes.actionBtn}>
+              <span>Learn More</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" className={classes.actionBtn}>
+              <span>Log In</span>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/signup" className={classes.actionBtn}>
+              <span>Sign Up</span>
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
