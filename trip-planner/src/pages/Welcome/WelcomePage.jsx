@@ -1,5 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import classes from "./Welcome.module.css";
+import TypeIt from "typeit-react";
 
 const WelcomePage = ({ token }) => {
   let navigate = useNavigate();
@@ -9,12 +11,47 @@ const WelcomePage = ({ token }) => {
   };
 
   return (
-    <div>
-      <h1>Hello there</h1>
-      {token && <h2>Welcome back, {token.user.user_metadata.full_name}</h2>}
-      <button onClick={handleLogout}>Logout</button>
+    <div className={classes["welcome-content-box"]}>
+      <div className={classes["welcome-content"]}>
+        <TypeIt
+          style={{ fontSize: "3em" }}
+          options={{ speed: 100 }}
+          getBeforeInit={(instance) => {
+            instance
+              .type("Hello world,")
+              .pause(750)
+              .delete(6)
+              .pause(500)
+              .type("there!");
+
+            return instance;
+          }}
+        />
+        {token ? (
+          <>
+            <h2>
+              Welcome back, <br />
+              {token.user.user_metadata.full_name.toUpperCase()}
+            </h2>
+            <button className={classes.actionBtn} onClick={handleLogout}>
+              <span>Logout!</span>
+            </button>
+          </>
+        ) : (
+          <button className={classes.actionBtn}>
+            <span>
+              <Link to="/login" style={{ color: "white" }}>
+                Please log in!
+              </Link>
+            </span>
+          </button>
+        )}
+      </div>
     </div>
   );
 };
+
+/* <!-- HTML !-->
+<button class="button-64" role="button"><span class="text">Button 64</span></button> */
 
 export default WelcomePage;
