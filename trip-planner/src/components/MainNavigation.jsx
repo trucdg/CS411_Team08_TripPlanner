@@ -37,8 +37,8 @@ function MainNavigation() {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/flight">
-                  Flight
+                <Link className="nav-link" to="/hotels">
+                  Hotels
                 </Link>
               </li>
               <li class="nav-item">

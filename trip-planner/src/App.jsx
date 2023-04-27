@@ -13,6 +13,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import SignUpForm from "./pages/Auth/SignUp";
 import LoginForm from "./pages/Auth/Login";
 import WelcomePage from "./pages/Welcome/WelcomePage";
+import Hotels from "./pages/Hotels/Hotels";
 
 import "./App.css";
 
@@ -43,6 +44,7 @@ function App() {
         { path: "/signup", element: <SignUpForm /> },
         { path: "/login", element: <LoginForm setToken={setToken} /> },
         { path: "/welcome", element: <WelcomePage token={token} /> },
+        { path: "/hotels", element: <Hotels /> },
       ],
     },
   ]);
