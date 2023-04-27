@@ -46,7 +46,7 @@ def weathersearch():
 
 
 
-def search_playlist(name):
+def search_3playlist(name):
     # Set up a Spotipy client with your Spotify API credentials
     client_credentials_manager = SpotifyClientCredentials(client_id='a09b88e0398a4dc9aec50263de3d464b',                                                client_secret='f1146f97edfe4466842607d87304300a')
     sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
@@ -61,13 +61,14 @@ def search_playlist(name):
     counter=0
     playlists = results['playlists']['items']
     for playlist in playlists:
-        holder['playlist'+str(counter)] = playlist['external_urls']['spotify']
-    #    print(playlist['external_urls'])
-    #    print(playlist['name'])
-        print(playlist.keys())
+        listholder=[]
+        listholder += [playlist['external_urls']['spotify']]
+        listholder += [playlist['name']]
+        listholder += [playlist['images'][0]['url']]
+        holder['playlist'+str(counter)] = listholder
         counter+=1
     #print(holder)
-    return holder
+    return jsonify(holder)
     """
     # Extract the first artist from the search results
     if results['artists']['items']:
@@ -80,7 +81,7 @@ def search_playlist(name):
 
 
 #print(search_artist("Taylor Swift"))
-print(search_playlist("Boston"))
+#print(search_3playlist("Boston"))
 
 
 
