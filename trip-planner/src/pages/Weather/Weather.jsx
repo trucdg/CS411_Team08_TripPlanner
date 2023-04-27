@@ -59,8 +59,20 @@ const Weather = () => {
 
   const fetchWeatherInfo = async () => {
     try {
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${enteredLat}&lon=${enteredLong}&units=metric&appid=${API_KEY}`
+      const formData = new FormData();
+      formData.append('lat', JSON.stringify(enteredLat))
+      formData.append('long', JSON.stringify(enteredLong))
+
+      const response = await fetch(`http://127.0.0.1:5000/search`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+        },
+        body: formData
+      }
+
       );
       const data = await response.json();
       console.log(data);

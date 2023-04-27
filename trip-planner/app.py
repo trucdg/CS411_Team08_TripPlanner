@@ -1,7 +1,20 @@
+import json
 import requests
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+import os
+
+# ENVIRONMENT
+from dotenv import load_dotenv
+load_dotenv()
+
+API_KEY = os.getenv("OPEN_WEATHER")
+
+# CORS
+app = Flask(__name__)
+cors = CORS(app)
 
 
 """
@@ -21,28 +34,20 @@ print(forecast_data['properties']['periods'][0].keys())
 
 app = Flask(__name__)
 
+@app.route("/search", methods=["GET"])
 def weathersearch():
 
-    lat = request.args.get('lat')
-    long = request.args.get('long')
+    # lat = request.args.get('lat')
+    # long = request.args.get('long')
+    lat = 42.3601
+    long = 71.0589
     
-    api_url = f'https://api.weather.gov/points/{lat},{long}'
+    api_url = f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&units=metric&apiKey={API_KEY}'
     response=requests.get(api_url)
     data=response.json()
 
-    forecasturl = data['properties']['forecast']
-    forecast_response = requests.get(forecasturl)
-    forecast_data = forecast_response.json()
-
-    weather_info = {
-        'citName': data['properties']['relativeLocation']['properties']['city'],
-        'temp': data['properties']['periods'][0]['temperature'],
-        'humidity': data['properties']['periods'][0]['relativeHumidity'],
-        'weatherDescription': data['properties']['periods'][0]['shortForecast']
-    }
-
-    return jsonify(weather_info)
-    #state=data['properties']['relativeLocation']['properties']['state']
+    sea_level = data["main"]["sea_level"]
+    return jsonify(sea_level)
 
 
 
@@ -119,3 +124,10 @@ print(get_flight_prices(p1,p2))
 #print(current_conditions)
 #print("TemperatureL", current_conditions['temperature'])
 """
+
+# MAIN ROUTER #
+@app.route("/", methods=["GET"])
+def slash(): return "Server is running..."
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
