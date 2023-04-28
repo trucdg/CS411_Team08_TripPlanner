@@ -31,11 +31,5 @@ def render_results():
     return data
 
 
-
-
-
-
-print(get_weather_results("02368", get_api_key()))
-
 if __name__=='__main__':
     app.run()
