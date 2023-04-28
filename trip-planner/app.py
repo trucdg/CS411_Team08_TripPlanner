@@ -22,7 +22,7 @@ def get_weather_results(lat, long):
     return response.json()
 
 @app.route('/weatherresults', methods=["POST"], strict_slashes=False)
-def render_results():
+def render_weather_results():
     lat = request.json['enteredLat']
     long = request.json['enteredLong']
     print(lat,long)
@@ -59,16 +59,17 @@ def get_hotel_results(lat, long, checkin,checkout,numAdults,numRooms):
     return response.json()
 
 @app.route('/hotelresults', methods=["POST"], strict_slashes=False)
-def render_results():
-    lat = request.json['latRef']
-    long = request.json['longRef']
-    checkin = request.json['checkinRef']
-    checkout = request.json['checkoutRef']
-    numAdults = request.json['numAdultsRef']
-    numRooms = request.json['numRoomsRef']
+def render_hotel_results():
+    lat = request.json['lat']
+    long = request.json['long']
+    checkin = request.json['checkin']
+    checkout = request.json['checkout']
+    numAdults = request.json['numAdults']
+    numRooms = request.json['numRooms']
 
     print(lat,long,checkin,checkout,numAdults,numRooms)
     data = get_hotel_results(lat, long, checkin,checkout,numAdults,numRooms) #json object
+    print(data)
     return data
 
 if __name__=='__main__':
