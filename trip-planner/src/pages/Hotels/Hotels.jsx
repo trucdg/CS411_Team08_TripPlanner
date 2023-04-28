@@ -158,9 +158,11 @@ const Hotels = () => {
             </button>
           </div>
         </form>
+        </div>
+        <div className="container justify-content-center align-items-center">
         {hotelList.length > 0 && (
           <div>
-            <Row xs={1} md={2} className="g-4">
+            <Row xs={1} md={2} className="g-4 container">
               {hotelList.map((hotel, idx) => (
                 <Col>
                   <Card style={{ width: "28rem", color: "black" }}>
