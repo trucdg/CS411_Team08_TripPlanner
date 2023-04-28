@@ -1,5 +1,5 @@
 export default class WeatherAPI {
-  static fetchData(body) {
+  static fetchWeatherData(body) {
     return fetch(`http://127.0.0.1:5000/weatherresults`, {
       method: "POST",
       headers: {

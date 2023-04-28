@@ -60,7 +60,10 @@ const Weather = () => {
 
   const fetchWeatherInfo = async () => {
     try {
-      const response = await WeatherAPI.fetchData({ enteredLat, enteredLong });
+      const response = await WeatherAPI.fetchWeatherData({
+        enteredLat,
+        enteredLong,
+      });
       const data = await response;
       console.log(data);
       console.log(data.name);
