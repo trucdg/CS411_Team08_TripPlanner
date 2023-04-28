@@ -8,6 +8,11 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def weather_dashboard():
+    return "Server is running"
+
+# WEATHER API
 def get_weather_results(lat, long):
     """"return the data from the api call as json """
     api_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&units=metric&appid={os.getenv('WEATHER_API_KEY')}"
@@ -16,20 +21,55 @@ def get_weather_results(lat, long):
     print( response.json())
     return response.json()
 
-@app.route('/')
-def weather_dashboard():
-    return "Hello"
-
-
 @app.route('/weatherresults', methods=["POST"], strict_slashes=False)
 def render_results():
     lat = request.json['enteredLat']
     long = request.json['enteredLong']
     print(lat,long)
     data = get_weather_results(lat, long) #json object
-
     return data
 
+# HOTEL API
+def get_hotel_results(lat, long, checkin,checkout,numAdults,numRooms):
+    """"return the data from the api call as json """
+    api_url = "https://booking-com.p.rapidapi.com/v1/hotels/search-by-coordinates"
+
+    querystring = {"units":"metric",
+                   "room_number": numRooms,
+                   "longitude": long ,
+                   "latitude": lat,
+                   "filter_by_currency":"USD",
+                   "order_by":"popularity",
+                   "locale":"en-us",
+                   "checkout_date": checkout,
+                   "adults_number": numAdults,
+                   "checkin_date": checkin,
+                   "include_adjacency":"true",
+                   "page_number":"0",
+                   "categories_filter_ids":"class::2,class::4,free_cancellation::1"}
+    
+    headers = {
+	"content-type": "application/octet-stream",
+	"X-RapidAPI-Key": os.getenv('BOOKING_RAPID_API_KEY'),
+	"X-RapidAPI-Host": "booking-com.p.rapidapi.com"
+    }
+
+    response = requests.get(api_url, headers=headers, params=querystring)
+    print(response.json())
+    return response.json()
+
+@app.route('/hotelresults', methods=["POST"], strict_slashes=False)
+def render_results():
+    lat = request.json['latRef']
+    long = request.json['longRef']
+    checkin = request.json['checkinRef']
+    checkout = request.json['checkoutRef']
+    numAdults = request.json['numAdultsRef']
+    numRooms = request.json['numRoomsRef']
+
+    print(lat,long,checkin,checkout,numAdults,numRooms)
+    data = get_hotel_results(lat, long, checkin,checkout,numAdults,numRooms) #json object
+    return data
 
 if __name__=='__main__':
     app.run()
