@@ -1,5 +1,5 @@
 import requests
-import configparser
+import os
 from flask import Flask, request
 from flask_cors import CORS
 from dotenv import load_dotenv
@@ -10,7 +10,7 @@ CORS(app)
 
 def get_weather_results(lat, long):
     """"return the data from the api call as json """
-    api_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&units=metric&appid={get_api_key()}"
+    api_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&units=metric&appid={os.getenv('WEATHER_API_KEY')}"
     print(api_url)
     response = requests.get(api_url)
     print( response.json())
@@ -30,10 +30,6 @@ def render_results():
 
     return data
 
-def get_api_key():
-    config = configparser.ConfigParser()
-    config.read("config.ini")
-    return config["openweatherapi"]['apiKey']
 
 
 
