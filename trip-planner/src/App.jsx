@@ -14,7 +14,6 @@ import SignUpForm from "./pages/Auth/SignUp";
 import LoginForm from "./pages/Auth/Login";
 import WelcomePage from "./pages/Welcome/WelcomePage";
 import Hotels from "./pages/Hotels/Hotels";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [token, setToken] = useState(false);
