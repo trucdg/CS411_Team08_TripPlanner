@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import classes from "./Hotels.module.css";
 import axios from "axios";
+import HotelAPI from "../../APIs/HotelAPI";
 import parse from "html-react-parser";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-const BOOKING_RAPID_API_KEY = import.meta.env.BOOKING_RAPID_API_KEY;
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Hotels = () => {
   const latRef = useRef();
@@ -26,38 +27,52 @@ const Hotels = () => {
     console.log(numAdultsRef.current.value);
     console.log(numRoomsRef.current.value);
 
-    const options = {
-      method: "GET",
-      url: "https://booking-com.p.rapidapi.com/v1/hotels/search-by-coordinates",
-      params: {
-        units: "metric",
-        room_number: numRoomsRef.current.value,
-        longitude: longRef.current.value,
-        latitude: latRef.current.value,
-        filter_by_currency: "USD",
-        order_by: "popularity",
-        locale: "en-us",
-        checkout_date: checkoutRef.current.value,
-        adults_number: numAdultsRef.current.value,
-        checkin_date: checkinRef.current.value,
-        children_ages: "0",
-        include_adjacency: "true",
-        page_number: "0",
-        categories_filter_ids: "class::2,class::4,free_cancellation::1",
-      },
-      headers: {
-        "content-type": "application/octet-stream",
-        "X-RapidAPI-Key": "aab7ce40c6msh66155138dcaa8bbp1e4aa1jsnee55674fb612",
-        "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
-      },
-    };
+    // const options = {
+    //   method: "GET",
+    //   url: "https://booking-com.p.rapidapi.com/v1/hotels/search-by-coordinates",
+    //   params: {
+    //     units: "metric",
+    //     room_number: numRoomsRef.current.value,
+    //     longitude: longRef.current.value,
+    //     latitude: latRef.current.value,
+    //     filter_by_currency: "USD",
+    //     order_by: "popularity",
+    //     locale: "en-us",
+    //     checkout_date: checkoutRef.current.value,
+    //     adults_number: numAdultsRef.current.value,
+    //     checkin_date: checkinRef.current.value,
+    //     children_ages: "0",
+    //     include_adjacency: "true",
+    //     page_number: "0",
+    //     categories_filter_ids: "class::2,class::4,free_cancellation::1",
+    //   },
+    //   headers: {
+    //     "content-type": "application/octet-stream",
+    //     "X-RapidAPI-Key": "aab7ce40c6msh66155138dcaa8bbp1e4aa1jsnee55674fb612",
+    //     "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
+    //   },
+    // };
 
     try {
-      const response = await axios.request(options);
-      console.log(response.data);
-      console.log(response.data.result);
-      console.log(BOOKING_RAPID_API_KEY);
-      setHotelList(response.data.result);
+      const lat = latRef.current.value;
+      const long = longRef.current.value;
+      const checkin = checkinRef.current.value;
+      const checkout = checkoutRef.current.value;
+      const numAdults = numAdultsRef.current.value;
+      const numRooms = numRoomsRef.current.value;
+      const response = await HotelAPI.fetchHotelData({
+        lat,
+        long,
+        checkin,
+        checkout,
+        numAdults,
+        numRooms,
+      });
+
+      const data = await response;
+      console.log(data);
+
+      setHotelList(data.result);
     } catch (error) {
       console.error(error);
     }
