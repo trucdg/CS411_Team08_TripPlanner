@@ -79,107 +79,106 @@ const Hotels = () => {
   };
 
   return (
-    <div className={classes["hotels-main"]}>
-      <h1>Search for Hotels</h1>
-      <form className="row g-3" onSubmit={searchHotels}>
-        <div className="col-md-6">
-          <label for="inputLat" className="form-label">
-            Latitude
-          </label>
-          <input
-            ref={latRef}
-            type="text"
-            className="form-control"
-            id="inputLat"
-          />
-        </div>
-        <div className="col-md-6">
-          <label for="inputLong" className="form-label">
-            Longitude
-          </label>
-          <input
-            ref={longRef}
-            type="text"
-            className="form-control"
-            id="inputLong"
-          />
-        </div>
-        <div className="col-md-6">
-          <label for="checkin_date" className="form-label">
-            Check-in Date
-          </label>
-          <input
-            ref={checkinRef}
-            type="date"
-            className="form-control"
-            id="checkin_date"
-          />
-        </div>
-        <div className="col-md-6">
-          <label for="checkout_date" className="form-label">
-            Check-out Date
-          </label>
-          <input
-            ref={checkoutRef}
-            type="date"
-            className="form-control"
-            id="checkout_date"
-          />
-        </div>
-        <div className="col-md-6">
-          <label for="adult_num" className="form-label">
-            Number of Adults
-          </label>
-          <input
-            ref={numAdultsRef}
-            type="text"
-            className="form-control"
-            id="adult_num"
-            placeholder="Enter the number of adults"
-          />
-        </div>
-        <div className="col-md-6">
-          <label for="room_num" className="form-label">
-            Number of Room
-          </label>
-          <input
-            ref={numRoomsRef}
-            type="text"
-            className="form-control"
-            id="room_num"
-            placeholder="Enter the number of rooms"
-          />
-        </div>
+    <div className={classes["hotels-outer-cont"]}>
+      <div className={classes["hotels-inner-cont"]}>
+        <h1>Search for Hotels</h1>
+        <form className="row g-3" onSubmit={searchHotels}>
+          <div className="col-md-6">
+            <label for="inputLat" className="form-label">
+              Latitude
+            </label>
+            <input
+              ref={latRef}
+              type="text"
+              className="form-control"
+              id="inputLat"
+            />
+          </div>
+          <div className="col-md-6">
+            <label for="inputLong" className="form-label">
+              Longitude
+            </label>
+            <input
+              ref={longRef}
+              type="text"
+              className="form-control"
+              id="inputLong"
+            />
+          </div>
+          <div className="col-md-6">
+            <label for="checkin_date" className="form-label">
+              Check-in Date
+            </label>
+            <input
+              ref={checkinRef}
+              type="date"
+              className="form-control"
+              id="checkin_date"
+            />
+          </div>
+          <div className="col-md-6">
+            <label for="checkout_date" className="form-label">
+              Check-out Date
+            </label>
+            <input
+              ref={checkoutRef}
+              type="date"
+              className="form-control"
+              id="checkout_date"
+            />
+          </div>
+          <div className="col-md-6">
+            <label for="adult_num" className="form-label">
+              Number of Adults
+            </label>
+            <input
+              ref={numAdultsRef}
+              type="text"
+              className="form-control"
+              id="adult_num"
+              placeholder="Enter the number of adults"
+            />
+          </div>
+          <div className="col-md-6">
+            <label for="room_num" className="form-label">
+              Number of Room
+            </label>
+            <input
+              ref={numRoomsRef}
+              type="text"
+              className="form-control"
+              id="room_num"
+              placeholder="Enter the number of rooms"
+            />
+          </div>
 
-        <div className="col-12">
-          <button
-            type="submit"
-            className={classes.searchBtn + " btn btn-primary"}
-          >
-            Search
-          </button>
-        </div>
-      </form>
-      {hotelList.length > 0 && (
-        <div>
-          <Row xs={1} md={2} className="g-4">
-            {hotelList.map((hotel, idx) => (
-              <Col>
-                <Card style={{ width: "28rem", color: "black" }}>
-                  <Card.Img variant="top" src={hotel["max_photo_url"]} />
-                  <Card.Body>
-                    <Card.Title>{hotel["hotel_name"]}</Card.Title>
-                    {parse(hotel["unit_configuration_label"])}
-                    <Card.Text>
-                      {hotel.address + " " + hotel.city + " " + hotel.zip}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </div>
-      )}
+          <div className="col-12">
+            <button type="submit" className={classes.actionBtn}>
+              <span>Search</span>
+            </button>
+          </div>
+        </form>
+        {hotelList.length > 0 && (
+          <div>
+            <Row xs={1} md={2} className="g-4">
+              {hotelList.map((hotel, idx) => (
+                <Col>
+                  <Card style={{ width: "28rem", color: "black" }}>
+                    <Card.Img variant="top" src={hotel["max_photo_url"]} />
+                    <Card.Body>
+                      <Card.Title>{hotel["hotel_name"]}</Card.Title>
+                      {parse(hotel["unit_configuration_label"])}
+                      <Card.Text>
+                        {hotel.address + " " + hotel.city + " " + hotel.zip}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
