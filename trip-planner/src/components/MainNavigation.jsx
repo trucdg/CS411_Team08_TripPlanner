@@ -27,11 +27,6 @@ function MainNavigation() {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-              </li>
-              <li class="nav-item">
                 <Link className="nav-link" to="/weather">
                   Weather
                 </Link>
