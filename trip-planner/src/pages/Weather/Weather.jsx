@@ -1,5 +1,5 @@
 import { useState } from "react";
-import APIService from "../../components/APIService";
+import WeatherAPI from "../../APIs/WeatherAPI";
 import classes from "./Weather.module.css";
 import CurrWeatherThumbnails from "./CurrWeatherThumbnails";
 
@@ -60,7 +60,7 @@ const Weather = () => {
 
   const fetchWeatherInfo = async () => {
     try {
-      const response = await APIService.fetchData({ enteredLat, enteredLong });
+      const response = await WeatherAPI.fetchData({ enteredLat, enteredLong });
       const data = await response;
       console.log(data);
       console.log(data.name);
