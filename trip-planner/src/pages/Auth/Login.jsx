@@ -77,7 +77,6 @@ const LoginForm = ({ setToken }) => {
                     onChange={handleChange}
                   />
                 </div>
-
                 {/* Password Input */}
                 <div className="form-outline mb-3">
                   <input
@@ -88,7 +87,6 @@ const LoginForm = ({ setToken }) => {
                     onChange={handleChange}
                   />
                 </div>
-
                 <div className="text-center text-lg-start mt-4 pt-2">
                   <button
                     type="submit"
@@ -101,6 +99,14 @@ const LoginForm = ({ setToken }) => {
                     Don't have an account? <Link to="/signup">Sign Up!</Link>
                   </p>
                 </div>
+                <Link
+                  className="btn btn-primary btn-lg btn-block"
+                  style={{ backgroundColor: "black", margin: "2em" }}
+                  to="/githublogin"
+                  role="button"
+                >
+                  <i class="fab fa-github me-2"></i>Continue with Github
+                </Link>
               </form>
             </div>
           </div>
