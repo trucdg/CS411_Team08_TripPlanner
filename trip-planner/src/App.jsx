@@ -14,6 +14,7 @@ import SignUpForm from "./pages/Auth/SignUp";
 import LoginForm from "./pages/Auth/Login";
 import WelcomePage from "./pages/Welcome/WelcomePage";
 import Hotels from "./pages/Hotels/Hotels";
+import GithubLogin from "./pages/Auth/GithubLogin";
 
 function App() {
   const [token, setToken] = useState(false);
@@ -43,6 +44,7 @@ function App() {
         { path: "/login", element: <LoginForm setToken={setToken} /> },
         { path: "/welcome", element: <WelcomePage token={token} /> },
         { path: "/hotels", element: <Hotels /> },
+        { path: "/githublogin", element: <GithubLogin /> },
       ],
     },
   ]);
