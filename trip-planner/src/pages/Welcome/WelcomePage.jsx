@@ -31,7 +31,7 @@ const WelcomePage = ({ token }) => {
           <>
             <h2>
               Welcome back, <br />
-              {token.user.user_metadata.full_name.toUpperCase()}
+              {token.user.email}
             </h2>
             <button className={classes.actionBtn} onClick={handleLogout}>
               <span>Logout!</span>
