@@ -1,7 +1,21 @@
 {
   "dependencies": {
     "@supabase/supabase-js": "^2.20.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.1",
     "react-router-dom": "^6.10.0",
     "typeit-react": "^2.6.4"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "cs411_team08_tripplanner",
+  "description": ":heavy_check_mark:***Members***\r * :point_right: Truc Duong :email:: trucdg@bu.edu\r * :point_right: Eric Gao :email:: ericg123@bu.edu\r * :point_right: Lazaro Solorzano - :email:: lazsol@bu.edu",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
