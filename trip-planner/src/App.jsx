@@ -13,8 +13,8 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import SignUpForm from "./pages/Auth/SignUp";
 import LoginForm from "./pages/Auth/Login";
 import WelcomePage from "./pages/Welcome/WelcomePage";
-
-import "./App.css";
+import Hotels from "./pages/Hotels/Hotels";
+import GithubLogin from "./pages/Auth/GithubLogin";
 
 function App() {
   const [token, setToken] = useState(false);
@@ -43,6 +43,8 @@ function App() {
         { path: "/signup", element: <SignUpForm /> },
         { path: "/login", element: <LoginForm setToken={setToken} /> },
         { path: "/welcome", element: <WelcomePage token={token} /> },
+        { path: "/hotels", element: <Hotels /> },
+        { path: "/githublogin", element: <GithubLogin /> },
       ],
     },
   ]);

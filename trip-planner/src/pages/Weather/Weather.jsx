@@ -1,4 +1,5 @@
 import { useState } from "react";
+import WeatherAPI from "../../APIs/WeatherAPI";
 import classes from "./Weather.module.css";
 import CurrWeatherThumbnails from "./CurrWeatherThumbnails";
 
@@ -59,10 +60,11 @@ const Weather = () => {
 
   const fetchWeatherInfo = async () => {
     try {
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${enteredLat}&lon=${enteredLong}&units=metric&appid=${API_KEY}`
-      );
-      const data = await response.json();
+      const response = await WeatherAPI.fetchWeatherData({
+        enteredLat,
+        enteredLong,
+      });
+      const data = await response;
       console.log(data);
       console.log(data.name);
 
@@ -78,7 +80,7 @@ const Weather = () => {
       console.log(
         "Oh no, there is an error when fetching for data from the weather API"
       );
-      console.log("The weather is", e);
+      console.log("The error is", e);
     }
   };
 
