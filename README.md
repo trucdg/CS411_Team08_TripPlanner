@@ -26,7 +26,28 @@ The following **required** functionality is completed:
 
 ## 🔗[Project Video Demo 📸📹🔥](https://www.youtube.com/watch?v=IUIVU4Fdwo0)
 
+## 🎀👓 Video Walkthrough
 
+Here's a walkthrough of implemented required features:
+### ✔ Authentication using user's email with Supabase
+
+<img src='https://github.com/trucdg/CS411_Team08_TripPlanner/blob/main/Project-walkthrough/Auth-user-email.gif' title='Video Walkthrough' width='1024' alt='Video Walkthrough' />
+
+### ✔ Oauth with Github 
+
+<img src='https://github.com/trucdg/CS411_Team08_TripPlanner/blob/main/Project-walkthrough/Oauth-github.gif' title='Video Walkthrough' width='1024' alt='Video Walkthrough' />
+
+### ✔ OpenWeather API
+
+<img src='https://github.com/trucdg/CS411_Team08_TripPlanner/blob/main/Project-walkthrough/WeatherAPI.gif' title='Video Walkthrough' width='1024' alt='Video Walkthrough' />
+
+### ✔ BookingRapid API
+
+<img src='https://github.com/trucdg/CS411_Team08_TripPlanner/blob/main/Project-walkthrough/BookingAPI.gif' title='Video Walkthrough' width='1024' alt='Video Walkthrough' />
+
+### ✔ CRUD Operations
+
+<img src='https://github.com/trucdg/CS411_Team08_TripPlanner/blob/main/Project-walkthrough/CRUD.gif' title='Video Walkthrough' width='1024' alt='Video Walkthrough' />
 
 *Steeping some tea ... 	:coffee:	:coffee:*
 
