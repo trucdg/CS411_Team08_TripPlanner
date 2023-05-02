@@ -48,7 +48,7 @@ const Hotels = () => {
     //   },
     //   headers: {
     //     "content-type": "application/octet-stream",
-    //     "X-RapidAPI-Key": "aab7ce40c6msh66155138dcaa8bbp1e4aa1jsnee55674fb612",
+    //     "X-RapidAPI-Key": "YOUR API KEY",
     //     "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
     //   },
     // };
@@ -158,8 +158,8 @@ const Hotels = () => {
             </button>
           </div>
         </form>
-        </div>
-        <div className="container justify-content-center align-items-center">
+      </div>
+      <div className="container justify-content-center align-items-center">
         {hotelList.length > 0 && (
           <div>
             <Row xs={1} md={2} className="g-4 container">
