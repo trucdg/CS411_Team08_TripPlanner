@@ -5,8 +5,14 @@ const fetch = (...args) =>
 
 var bodyParser = require("body-parser");
 
-const CLIENT_ID = "ab85253e8cdea5a7ef2b";
-const CLIENT_SECRET = "856dc4f2287eba7a4c4f587c0ca305bf35201956"; //github client secret
+require("dotenv").config();
+console.log(process.env);
+
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET; //github client secret
+
+// console.log(CLIENT_ID);
+// console.log(CLIENT_SECRET);
 
 var app = express();
 
